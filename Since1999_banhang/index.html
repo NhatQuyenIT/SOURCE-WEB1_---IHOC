@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SINCE 1999 STORE</title>
+	<link rel="shortcut icon" href="images/icon/favicon.ico">
+	<link type="text/css" rel="stylesheet" href="3 thang ban/style.css">
+</head>
+
+<body onLoad="showMenu();showProduct();checklogin();">
+	<div id="nav">
+		<div class="container">
+			<div class="topnav">
+				<ul class="left">
+					<li><a href="https://www.facebook.com/"><img src="images/icon/facebookicon.svg"></a></li>
+					<li><a href="https://www.instagram.com/"><img src="images/icon/instagramicon.svg"></a></li>
+					<li><a href="https://www.youtube.com/"><img src="images/icon/youtubeicon.svg"></a></li>
+				</ul>
+				<ul class="right">
+					<li>
+						<button onClick="showform()"><img src="images/icon/usericon.svg"></button>
+					</li>
+					<li>
+						<button
+								onClick="location.href='C:\Users\ASUS\OneDrive\Máy tính\Do`AN_Web1\Since1999_banhang\cart.html'">
+							<img
+									src="images/icon/carticon.svg"></button>
+					</li>
+					<li>
+						<button onClick="showSearch()"><img src="images/icon/searchicon.svg"></button>
+					</li>
+				</ul>
+			</div>
+			<div class="botnav">
+				<div class="logo"><a href="index.html"><img
+						src="images/icon/z4752184949527_07c0ac1cac30af04fc640a993b82afbe.jpg" alt="Since1999"></a>
+				</div>
+				<div>
+					<button id="btnmenu" onclick="showMenuMobile()">&#9776;</button>
+				</div>
+				<ul id="navmenu">
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="user" class="modal">
+		<div id="login">
+			<form id="loginform">
+				<button type="button" class="close" onClick="closeform()">+</button>
+				<h2>ĐĂNG NHẬP</h2>
+				<div class="logininfo">
+					<div class="col">
+						<label for="usernameLogin">Tên đăng nhập:</label>
+						<input type="text" id="usernameLogin">
+						<div id="usernameerror">Bạn chưa nhập tên đăng nhập</div>
+						<label for="passwordLogin">Mật khẩu:</label>
+						<input type="password" id="passwordLogin">
+						<div id="passwordloginerror">Bạn chưa nhập mật khẩu</div>
+					</div>
+				</div>
+				<button type="submit" id="btnlogin">Login</button>
+				<p>Bạn chưa có tài khoản? <a href="#" onClick="showSignUp()">Đăng ký</a></p>
+			</form>
+		</div>
+		<div id="signup">
+			<form id="signupform">
+				<button type="button" class="close" onClick="closeform()">+</button>
+				<h2>ĐĂNG KÝ</h2>
+				<div class="signupinfo">
+					<div class="col">
+						<label for="fullname">Họ và tên: </label>
+						<input type="text" id="fullname">
+						<div id="fullnameerror">Bạn chưa nhập họ tên</div>
+						<label for="address">Địa chỉ: </label>
+						<input type="text" id="address">
+						<div id="addresserror">Bạn chưa địa chỉ</div>
+						<label for="phone">Số điện thoại: </label>
+						<input type="text" id="phone">
+						<div id="phoneerror">Bạn chưa nhập số điện thoại</div>
+					</div>
+					<div class="col">
+						<label for="usernameSignUp">Tên đăng nhập: </label>
+						<input type="text" id="usernameSignUp">
+						<div id="usererror">Bạn chưa nhập tên đăng nhập</div>
+						<label for="passwordSignUp">Mật khẩu: </label>
+						<input type="password" id="passwordSignUp">
+						<div id="passworderror">Bạn chưa nhập mật khẩu</div>
+						<label for="passwordSignUp2">Nhập lại mật khẩu: </label>
+						<input type="password" id="passwordSignUp2">
+						<div id="password2error">Mật khẩu không trùng khớp</div>
+					</div>
+				</div>
+				<button type="submit" id="btnsignup">Đăng ký</button>
+				<p>Trở về trang <a href="#" onClick="showLogin()">Đăng nhập</a></p>
+			</form>
+		</div>
+	</div>
+	<!--Searchsection  begin -->
+	<div id="searchsection">
+		<div class="container">
+			<div class="close" onClick="closeSearch()">+</div>
+			<div class="searchbox">
+				<input type="text" placeholder="Tìm kiếm" id="search" onKeyUp="search()"><button
+					onclick="showextend()"><img src="images/icon/arrow.svg"></button>
+			</div>
+			<div id="searchextend" class="">
+				<div>
+					<select id="brandsearch" onchange="search()">
+						<option value="all" selected>TẤT CẢ</option>
+						<option value="adidas">ADIDAS</option>
+						<option value="nike">NIKE</option>
+						<option value="gucci">GUCCI</option>
+						<option value="balenciaga">BALENCIAGA</option>
+					</select>
+				</div>
+				<div> <input type="text" id="priceform" onchange="search()" placeholder="Giá từ"> &mdash; <input
+						type="text" id="priceto" onchange="search()" placeholder="Đến"></div>
+			</div>
+			<div id="searchresult"></div>
+		</div>
+	</div>
+	<!--Searchsection  end -->
+	<!--Banner (Nhi) begin -->
+	<div class="bannerSection">
+		<div>
+			<img class="slideShow" src="images/z4752177325577_28061b6274d82c71c2482687e6eebeb8.jpg" style="width: 100%">
+			<img class="slideShow" src="images/z4752177331551_230b7fb0a076ae497ccf91d89328bf70.jpg" style="width: 100%">
+			<img class="slideShow" src="images/z4752177331652_7b1f1e857b78d3515debbb45b3c6db70.jpg" style="width: 100%">
+			<img class="slideShow" src="images/z4752177331653_cf32132e9faff4beafaed7762d572449.jpg" style="width: 100%">
+			<img class="slideShow" src="images/z4752177331672_8f0436b5b7190e823a216200ccdc7e94.jpg" style="width: 100%">
+		</div>
+	</div>
+	<!--Banner (Nhi) end -->
+	<div id="main">
+		<div class="container" id="maincontent">
+			<div id="product">
+				<!--					 Product -->
+			</div>
+			<div id="productInfo" class="modal">
+				<div id="info">
+					<button type="button" class="close" onClick="closeProductInfo()">+</button>
+					<div class="left">
+						<img id="imgbig" src="">
+					</div>
+					<div class="right">
+						<h2 id="productname"></h2>
+						<h4 id="productprice"></h4>
+						<h4>SIZE</h4>
+						<select id="size">
+							<option value="36" selected>36</option>
+							<option value="37">37</option>
+							<option value="38">38</option>
+							<option value="39">39</option>
+							<option value="40">40</option>
+							<option value="41">41</option>
+							<option value="42">42</option>
+							<option value="43">43</option>
+							<option value="44">44</option>
+						</select>
+						<h4>Số lượng</h4>
+						<button class="quantitydown" onClick="quantitydown()">-</button><input type="text" id="quantity"
+							value="1"><button class="quantityup" onClick="quantityup()">+</button>
+						<button class="addtocart" onclick="addToCart()">Thêm vào giỏ</button>
+					</div>
+				</div>
+			</div>
+			<div id="page"></div>
+		</div>
+	</div>
+	<div id="mail">
+		<h2>Nhận thông tin khuyến mãi mới nhất</h2>
+		<p>Để lại email của bạn để nhận những thông tin khuyến mãi mới nhất từ chúng tôi</p>
+		<input type="email" id="customermail" placeholder="Email">
+		<button type="button">&#62;</button>
+	</div>
+	<div id="foot">
+		<div class="container">
+			<div class="topfoot">
+				<div class="footmenu">
+					<img src="images/icon/logo.jpg" alt="DINO SHOP">
+				</div>
+				<div class="footmenu">
+					<h4>Thông tin hữu ích</h4>
+					<a href="file/contact.html">Kiểm tra size giày</a><br>
+					<a href="file/contact1.html">Hướng dẫn bảo hành</a><br>
+					<a href="file/contact2.html">Quy định đổi giày</a>
+				</div>
+				<div class="footmenu">
+					<h4>Giới thiệu</h4>
+					<a href="file/contact3.html">Quan niệm về giày</a><br>
+					<a href="file/contact4.html">Danh sách cửa hàng</a><br>
+					<a href="file/contact4.html">Dành cho đại lý</a>
+				</div>
+				<div class="footmenu">
+					<h4>Thông tin liên hệ</h4>
+					<p>Địa chỉ: 273 An Dương Vương, P3, Quận 5, TPHCM</p>
+					<p>Số điện thoại: 0566490523 </p>
+				</div>
+			</div>
+			<div class="botfoot">
+				<p>2018 &#169; Copyright Since1999. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+	<div id="customalert"></div>
+	<script src="3 thang ban/javascript.js"></script>
+</body>
+
+</html>
